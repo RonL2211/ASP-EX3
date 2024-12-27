@@ -70,7 +70,6 @@ $(document).ready(() => {
         JSON.stringify(movie),
         () => {
             alert("Movie added successfully!");
-            renderMovies(); // Refresh the list
         },
         (error) => {
             console.error("Failed to add movie:", error);

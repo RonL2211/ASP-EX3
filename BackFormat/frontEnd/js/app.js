@@ -44,7 +44,6 @@ $(document).ready(() => {
     $moviesContainer.empty(); // Clear previous content
 
     ajaxCall('GET', 'https://proj.ruppin.ac.il/bgroup1/test2/tar1/api/Movie', null, (movies) => {
-
         if (movies.length === 0) {
             $moviesContainer.append("<p>No movies found.</p>");
             return;
@@ -52,15 +51,15 @@ $(document).ready(() => {
         movies.forEach(movie => {
             $moviesContainer.append(`
                 <div class="movie">
-                    <img src="${movie.photoUrl}" alt="${movie.title}" class="movie-img">
-                    <h3>${movie.title}</h3>
-                    <p><strong>Rating:</strong> ${movie.rating}</p>
-                    <p><strong>Release Year:</strong> ${movie.releaseYear}</p>
-                    <p><strong>Duration:</strong> ${movie.duration} minutes</p>
-                    <p><strong>Language:</strong> ${movie.language}</p>
-                    <p>${movie.description}</p>
-                    <p><strong>Genre:</strong> ${movie.genre}</p>
-                    <button class="wishlist-btn" data-id="${movie.id}" onclick="addToWishlist(${movie.id})" >Add to Wishlist</button>
+                    <img src="${movie.movie.photoUrl}" alt="${movie.movie.title}" class="movie-img">
+                    <h3>${movie.movie.title}</h3>
+                    <p><strong>Rating:</strong> ${movie.movie.rating}</p>
+                    <p><strong>Release Year:</strong> ${movie.movie.releaseYear}</p>
+                    <p><strong>Duration:</strong> ${movie.movie.duration} minutes</p>
+                    <p><strong>Language:</strong> ${movie.movie.language}</p>
+                    <p>${movie.movie.description}</p>
+                    <p><strong>Genre:</strong> ${movie.movie.genre}</p>
+                    <button class="wishlist-btn" data-id="${movie.movie.id}" onclick="addToWishlist(${movie.movie.id})" >Add to Wishlist</button>
                 </div>
             `);
         })}, 
