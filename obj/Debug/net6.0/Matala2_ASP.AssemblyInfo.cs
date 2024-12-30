@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Matala2_ASP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab743f739c980d289ca68b2ad323da72f21518b9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aae08454647ca13e44c7448d49b8874ec5c90469")]
 [assembly: System.Reflection.AssemblyProductAttribute("Matala2_ASP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Matala2_ASP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

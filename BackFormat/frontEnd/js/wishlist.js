@@ -16,9 +16,9 @@ $(document).ready(() => {
             `https://proj.ruppin.ac.il/bgroup1/test2/tar1/api/Movie/wishlist/${userId}`,
             null,
             (wishlistMovies) => {
+                console.log(wishlistMovies)
                 currentWishlistMovies = wishlistMovies; // Store fetched wishlist movies
                 const wishlistIds = wishlistMovies.map(movie => movie.id);
-
                 // Fetch all movies
                 ajaxCall(
                     "GET",
@@ -26,7 +26,7 @@ $(document).ready(() => {
                     null,
                     (allMovies) => {
                         allMovies.forEach(movie => {
-                            movie.inWishlist = wishlistIds.includes(movie.id);
+                            movie.movie.inWishlist = wishlistIds.includes(movie.movie.id);
                         });
                         renderMovies(allMovies, "#movies-container");
                     },
@@ -49,7 +49,7 @@ $(document).ready(() => {
     const renderMovies = (movies, containerSelector, isWishlist = false) => {
         const $container = $(containerSelector);
         $container.empty(); // Clear previous content
-
+console.log('movies =' , movies)
         if (!movies || movies.length === 0) {
             $container.append("<p>No movies found.</p>");
             return;

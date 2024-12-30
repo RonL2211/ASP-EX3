@@ -44,6 +44,7 @@ $(document).ready(() => {
     $moviesContainer.empty(); // Clear previous content
 
     ajaxCall('GET', 'https://proj.ruppin.ac.il/bgroup1/test2/tar1/api/Movie', null, (movies) => {
+        console.log(movies);
         if (movies.length === 0) {
             $moviesContainer.append("<p>No movies found.</p>");
             return;
