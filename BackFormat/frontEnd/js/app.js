@@ -89,8 +89,7 @@ $(document).ready(() => {
                         ${isInWishlist ? 'disabled' : ''}>
                         ${isInWishlist ? 'In Wishlist' : 'Add to Wishlist'}
                     </button>
-                    <button class="show-cast-btn" data-id="${movie.id}">Show Cast</button>
-                    <div class="cast-container" id="cast-${movie.id}" style="display:none;"></div>
+
                 </div>
             `);
         });
