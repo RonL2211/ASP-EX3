@@ -58,33 +58,29 @@ $(document).ready(() => {
                     <p><strong>Rating:</strong> ${movie.rating || 'N/A'}</p>
                     <p><strong>Release Year:</strong> ${movie.releaseYear || 'N/A'}</p>
                     <p><strong>Genre:</strong> ${movie.genre || 'N/A'}</p>
-                    <button 
-                        class="remove-wishlist-btn"
-                        data-id="${movie.id}">
-                        Remove from Wishlist
-                    </button>
+
                 </div>
             `);
         });
     };
 
-    // Remove movie from wishlist
-    $("#wishlist-container").on("click", ".remove-wishlist-btn", function () {
-        const movieId = $(this).data("id");
+    // // Remove movie from wishlist
+    // $("#wishlist-container").on("click", ".remove-wishlist-btn", function () {
+    //     const movieId = $(this).data("id");
 
-        ajaxCall(
-            "DELETE",
-            wishListAPI + userId + '/' + movieId,
-            null,
-            () => {
-                alert("❌ Movie removed from your wishlist!");
-                fetchWishlist();
-            },
-            (error) => {
-                console.error("❌ Error removing movie from wishlist:", error);
-            }
-        );
-    });
+    //     ajaxCall(
+    //         "DELETE",
+    //         wishListAPI + userId + '/' + movieId,
+    //         null,
+    //         () => {
+    //             alert("❌ Movie removed from your wishlist!");
+    //             fetchWishlist();
+    //         },
+    //         (error) => {
+    //             console.error("❌ Error removing movie from wishlist:", error);
+    //         }
+    //     );
+    // });
 
     // Filter by Minimum Rating
     $("#filter-rating-btn").on("click", () => {
