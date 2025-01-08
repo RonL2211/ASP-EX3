@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 // wishListAPI = "https://localhost:7049/api/Movie/wishlist/"  ; 
 wishListAPI = "https://proj.ruppin.ac.il/bgroup1/test2/tar1/api/Movie/wishlist/"  ; 
+=======
+>>>>>>> ac8c905432c9e3a2a6e24cf7f35e7af32b834bee
 
 
 $(document).ready(() => {
