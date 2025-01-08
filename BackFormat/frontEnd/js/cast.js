@@ -26,11 +26,7 @@ $(document).ready(() => {
                     <p><strong>Role:</strong> ${member.role}</p>
                     <p><strong>Date of Birth:</strong> ${member.date}</p>
                     <p><strong>Country:</strong> ${member.country}</p>
-                    <button class="assign-movie-btn">Assign to Movie</button>
-                    <div class="assign-movie-section" style="display:none; margin-top:10px;">
-                        <select class="movie-dropdown"></select>
-                        <button class="confirm-assign-btn">Confirm</button>
-                    </div>
+                   
                 </div>
             `);
         });
@@ -58,42 +54,42 @@ $(document).ready(() => {
     };
 
     // ✅ Show Movie Dropdown when "Assign to Movie" is clicked
-    $castContainer.on("click", ".assign-movie-btn", function () {
-        const $castCard = $(this).closest(".cast-member");
-        const $assignSection = $castCard.find(".assign-movie-section");
-        const $dropdown = $assignSection.find(".movie-dropdown");
+    // $castContainer.on("click", ".assign-movie-btn", function () {
+    //     const $castCard = $(this).closest(".cast-member");
+    //     const $assignSection = $castCard.find(".assign-movie-section");
+    //     const $dropdown = $assignSection.find(".movie-dropdown");
 
-        if ($assignSection.is(":visible")) {
-            $assignSection.hide();
-        } else {
-            $assignSection.show();
-            fetchMoviesForDropdown($dropdown);
-        }
-    });
+    //     if ($assignSection.is(":visible")) {
+    //         $assignSection.hide();
+    //     } else {
+    //         $assignSection.show();
+    //         fetchMoviesForDropdown($dropdown);
+    //     }
+    // });
 
-    // ✅ Handle Movie Assignment
-    $castContainer.on("click", ".confirm-assign-btn", function () {
-        const $castCard = $(this).closest(".cast-member");
-        const castId = $castCard.data("id");
-        const movieId = $castCard.find(".movie-dropdown").val();
+    // // ✅ Handle Movie Assignment
+    // $castContainer.on("click", ".confirm-assign-btn", function () {
+    //     const $castCard = $(this).closest(".cast-member");
+    //     const castId = $castCard.data("id");
+    //     const movieId = $castCard.find(".movie-dropdown").val();
 
-        if (!movieId) {
-            alert("Please select a movie to assign the cast member.");
-            return;
-        }
-        $.ajax({
-            url: castsApi + `/link/${movieId}/${castId}`,
-            method: "POST",
-            success: () => {
-                alert("✅ Cast member assigned to movie successfully!");
-                $castCard.find(".assign-movie-section").hide();
-            },
-            error: (error) => {
-                console.error("❌ Failed to assign cast member:", error);
-                alert("The cast is already in the list . Please try again.");
-            }
-        });
-    });
+    //     if (!movieId) {
+    //         alert("Please select a movie to assign the cast member.");
+    //         return;
+    //     }
+    //     $.ajax({
+    //         url: castsApi + `/link/${movieId}/${castId}`,
+    //         method: "POST",
+    //         success: () => {
+    //             alert("✅ Cast member assigned to movie successfully!");
+    //             $castCard.find(".assign-movie-section").hide();
+    //         },
+    //         error: (error) => {
+    //             console.error("❌ Failed to assign cast member:", error);
+    //             alert("The cast is already in the list . Please try again.");
+    //         }
+    //     });
+    // });
 
     // ✅ Handle Cast Form Submission
     $castForm.on("submit", (e) => {
