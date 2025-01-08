@@ -1,5 +1,5 @@
 
-
+wishListAPI = "https://proj.ruppin.ac.il/bgroup1/test2/tar1/api/Movie/wishlist/";
 $(document).ready(() => {
 
 
